@@ -1,0 +1,189 @@
+/* breakpoints */
+:root {
+  /* transitions */
+  --transition-duration: 200ms;
+  --transition-easing: ease;
+  --transition: var(--transition-duration) var(--transition-easing);
+
+  /* colors */
+  --black: 32, 32, 32;
+  --white: 255, 255, 255;
+  --gray: 233, 234, 235;
+  --gray-dark: 144, 144, 144;
+  --blue: 50, 98, 149;
+  --blue-light: 0, 156, 222;
+  --blue-dark: 21, 43, 81;
+  --red: 196, 13, 60;
+  --orange: 232, 119, 34;
+  --purple: 121, 81, 161;
+  --green: 114, 180, 49;
+  --yellow: 255, 205, 0;
+  --teal: 0, 147, 175;
+  --transparent: rgba(0, 0, 0, 0);
+
+  /* fonts */
+  --sans-serif: din-2014, sans-serif;
+
+  /* themes */
+  --theme: var(--blue);
+  --theme-text: var(--white);
+  --theme-accent: var(--blue-light);
+  --theme-accent-text: var(--white)
+}
+:root[data-theme='red'] {
+    --theme: var(--red);
+    --theme-text: var(--white);
+    --theme-accent: var(--red);
+    --theme-accent-text: var(--white);
+  }
+:root[data-theme='orange'] {
+    --theme: var(--orange);
+    --theme-text: var(--black);
+    --theme-accent: var(--orange);
+    --theme-accent-text: var(--black);
+  }
+:root[data-theme='purple'] {
+    --theme: var(--purple);
+    --theme-text: var(--white);
+    --theme-accent: var(--purple);
+    --theme-accent-text: var(--white);
+  }
+:root[data-theme='green'] {
+    --theme: var(--green);
+    --theme-text: var(--black);
+    --theme-accent: var(--green);
+    --theme-accent-text: var(--black);
+  }
+:root[data-theme='teal'] {
+  	--theme: var(--teal);
+    --theme-text: var(--white);
+    --theme-accent: var(--teal);
+    --theme-accent-text: var(--white);
+}
+@-webkit-keyframes slide-down {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+@keyframes slide-down {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+.finder__item__list {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+  background-color: rgb(233, 234, 235);
+  background-color: rgb(var(--gray))
+}
+.finder__item__list li {
+    margin-top: 0.5rem
+  }
+.finder__item__list li:first-child {
+      margin-top: 0;
+    }
+.theme-list {
+  padding: 0;
+  list-style: none
+}
+.theme-list li {
+    margin: 2rem 0 0;
+    padding-left: 1.25rem;
+    border-left: 0.125rem solid rgb(50, 98, 149);
+    border-left: 0.125rem solid rgb(var(--theme));
+  }
+.list__items {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 1rem 1.25rem 1rem 0;
+  border: 0.125rem solid rgb(50, 98, 149);
+  border: 0.125rem solid rgb(var(--theme));
+  border-top: 0;
+  list-style: none
+}
+@media (min-width: 48em) {
+.list__items {
+    padding: 1rem 2.5rem 1rem 0.5rem
+}
+  }
+.list__items li {
+    width: calc(100% - 1.25rem);
+    margin-left: 1.25rem;
+    padding: 0.75rem 0;
+    border-top: 0.065rem solid rgb(32, 32, 32);
+    border-top: 0.065rem solid rgb(var(--black))
+  }
+@media (min-width: 48em) {
+.list__items li {
+      width: calc(50% - 2rem);
+      margin-left: 2rem
+  }
+    }
+.list__items li:first-child {
+      border-top: 0;
+    }
+@media (min-width: 48em) {
+.list__items li:nth-child(2) {
+        border-top: 0
+    }
+      }
+
+
+
+.intro-text {
+  font-size: 1.125rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.5556;
+  text-transform: none;
+}
+
+@media (min-width: 48em) {
+  .intro-text {
+    font-size: 1.375rem;
+    line-height: 1.2727;
+  }
+}
+.cta-btn {
+  color: white;
+  background: rgb(var(--blue-light));
+  padding: .75rem 5rem;
+  transition: all .3s ease;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline;
+  box-shadow: 0 0 0 0px #fff, 0 0 0 0px rgb(var(--blue-light));
+    cursor: pointer;
+}
+
+.cta-btn:hover {
+  box-shadow: 0 0 0 4px #fff, 0 0 0 calc(4px + 4px) rgb(var(--blue-light));
+}
+
+.cta-btn:active {
+	box-shadow: 0 0 0 4px #fff, 0 0 0 calc(4px + 4px) rgb(var(--blue));
+    background: rgb(var(--blue));
+}
+
+
+
+

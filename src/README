@@ -1,0 +1,33 @@
+This application is used to programmatically update our events/workshop page on TerminalFour.
+
+Since we don't have access privileges that let us run separate JS modules on our site, we have to nest everything between < script > HTML tags. It's the worst.
+
+
+Program flow / Order we should copy and paste the modules into T4:
+(1.) JSONGlobal.js --> this module contains the JSON string. It should be an array of JSON objects following the API format defined below.
+(2.) globals.js --> declares global variables (obviously)
+(3.) LSEvent.js --> defines the LSEvent class
+(4.) LSEventSublist.js --> defines the LSEventSublist class. (We use it for series of events divided into multiple workshops, such as MTH Milestone workshops or Game Dev. workshops)
+(5.) LSEventSectionList --> defines the class we use for each "type" of event we're hosting, such as APA Workshops, Study Jams, Welcome Week, etc.
+(6.) init.js --> initializes key variables and parses JSON string
+
+
+---
+
+API Example for JSON Global:
+{    
+    "OfficialWorkshopTitle": "Adjusting to Academic Vocabulary",    
+    "Department": "ELL",    
+    "LeadPresenter": "Tracy/Kevin",    
+    "SupportPerson": "Ayesha",    
+    "Date": "10/1/2024",    
+    "StartTime": "6:00",    
+    "EndTime": "7:00",    
+    "Location": "",    
+    "Description": "Transform your ordinary to EXTRAordinary: Improve your academic vocabulary and learn how to select words that will dazzle your instructors.",    "SublistKey": ""  
+}
+
+---
+
+Usage Notes:
+Since we can't use external files/libraries, and since I don't want to create a CSV parser, we have to manually input the JSON string. We will have to hand-sanitize the CSV files for now, then convert them into a single-line JSON string. Someday, we'll want to fix this.

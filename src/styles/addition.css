@@ -1,0 +1,14 @@
+.logos {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 0 2rem 0;
+}
+.logos .logo__one {
+    flex: 50%;
+}
+.logos .logo__two {
+    flex: 50%;
+}
+
+

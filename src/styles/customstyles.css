@@ -1,0 +1,136 @@
+/* theming variables */
+:root {
+  --custom-gray: 221, 222, 223; /* Slightly darker shade of gray, but not as dark as gray-dark from styles.css */
+} 
+ 
+ /* primary accordion components -- almost identical to what's already in TerminalFour, but with different padding for content and a few other little bells and whistles */
+ .primary_accordion {
+    margin: 3rem 0;
+    border-bottom: 0.0625rem solid rgb(50, 98, 149);
+    border-bottom: 0.0625rem solid rgb(var(--theme));
+  }
+  .primary_accordion__toggle {
+    font-size: 1.375rem;
+    font-weight: 700;
+    letter-spacing: normal;
+    line-height: 1.1818;
+    text-transform: none;
+  
+    position: relative;
+    width: 100%;
+    padding: 1.25rem 3.5rem 1.25rem 1.25rem;
+    border: 0;
+    border-top: 0.0625rem solid rgb(50, 98, 149);
+    border-top: 0.0625rem solid rgb(var(--theme));
+    background-color: transparent;
+    text-align: left
+  }
+  .primary_accordion__toggle:hover {
+      background-color: rgba(50, 98, 149, 0.35);
+      background-color: rgba(var(--theme), 0.35);
+    }
+  .primary_accordion__toggle--active {
+    background-color: rgb(50, 98, 149) !important;
+    background-color: rgb(var(--theme)) !important;
+    color: rgb(255, 255, 255);
+    color: rgb(var(--theme-text));
+  }
+  .primary_accordion__content > :first-child {
+      margin-top: 0;
+    }
+  .primary_accordion__content > :last-child {
+      margin-bottom: 0;
+    }
+  .primary_accordion__content {
+    display: none;
+    padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+    border: 2px solid rgb(var(--theme));
+  }
+  .primary_accordion__content p {
+    padding: 0rem 3.5rem 0rem 0.75rem;
+  }
+  
+  .primary_accordion__toggle--active + .primary_accordion__content {
+      display: block
+  }
+  .primary_accordion__toggle__icon {
+    position: absolute;
+    top: calc(50% - 0.5rem);
+    right: 1.25rem;
+    width: 1rem
+  }
+  .primary_accordion__toggle--active .primary_accordion__toggle__icon {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg)
+  }
+  
+
+   /* nested accordion components */
+   .nested_accordion {
+    margin: 0 0;
+    border-bottom: 0.0625rem solid rgb(231, 232, 233);
+    border-bottom: 0.0625rem solid rgb(var(--gray));
+  }
+
+  .nested_accordion__toggle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: normal;
+    line-height: 1.1818;
+    text-transform: none;
+  
+    position: relative;
+    width: 100%;
+    padding: 1.25rem 3.5rem 1.25rem 1.0rem;
+    border: 0;
+    border-top: 0.0625rem solid rgb(221,222,223);
+    border-top: 0.0625rem solid rgb(var(--custom-gray));
+    border-bottom: 0.0625rem solid rgb(221,222,223);
+    border-bottom: 0.0625rem solid rgb(var(--custom-gray));
+    /*background-color: transparent;*/
+    text-align: left
+  }
+
+  .nested_accordion__content + .nested_accordion__toggle {
+    margin-top: 0.5rem;
+  }
+  .nested_accordion__toggle:hover {
+      background-color: rgba(50, 98, 149, 0.35);
+      background-color: rgba(var(--theme), 0.35);
+    }
+  .nested_accordion__toggle--active {
+    background-color: rgb(233, 234, 235) !important;
+    background-color: rgb(var(--gray)) !important;
+    border-bottom: 0.0625rem solid rgb(231,232,233);
+    border-bottom: 0.0625rem solid rgb(var(--gray));
+    color: rgb(32, 32, 32);
+    color: rgb(var(--black));
+  }
+  .nested_accordion__content > :first-child {
+      margin-top: 0;
+    }
+  .nested_accordion__content > :last-child {
+      margin-bottom: 0;
+    }
+  .nested_accordion__content {
+    display: none;
+    padding: 1.25rem 2.5rem 2rem 1rem;
+    border: 2px solid rgb(var(--gray));
+    border-bottom: 2px solid rgb(var(--custom-gray));
+  }
+  .nested_accordion__toggle--active + .nested_accordion__content {
+      display: block
+  }
+  .secondary_accordion__toggle__icon {
+    position: absolute;
+    top: calc(50% - 0.5rem);
+
+    right: 1.5rem;
+    width: 1rem
+  }
+  .nested_accordion__toggle--active .secondary_accordion__toggle__icon {
+      -webkit-transform: rotate(-90deg);
+              transform: rotate(-90deg)
+  }
+
+  

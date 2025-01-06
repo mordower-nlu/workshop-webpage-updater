@@ -1,21 +1,19 @@
-import { JSONString } from "./JSONGlobal";
-
-
 // ---
 // Pseudo-Enums 
 // Since vanilla JS doesn't support enums like TypeScript does, but I want enum-like syntax for this code (in case we need to add/remove keys used in other modules), I create global-scoped immutable objects whose fields work just like enums. 
 // Coder needs to ensure values aren't repeated along multiple keys.
+// Avoid using 0, since it might cause issues when checking if null
 //
 export const LSEventType = {
-    OTHER : -1,
-    ELL : 0,
-    APA : 1,
-    MTH : 2,
-    ENG : 3,
-    CSIS : 4,
-    CWC : 5,
-    WELCOMEWEEK : 6,
-    STUDYJAMS : 7
+    OTHER : 1,
+    ELL : 2,
+    APA : 3,
+    MTH : 4,
+    ENG : 5,
+    CSIS : 6,
+    CWC : 7,
+    WELCOMEWEEK : 8,
+    STUDYJAMS : 9
 }
 export const LSEventLocation = {
     TBD : -1,
@@ -51,7 +49,7 @@ export var GlobalTitleMap = new Map(); //Used to fetch the title names for each 
 // Functions for initializing each of the dictionaries above
 // Update as needed for new event types
 export function InitializeStringEnumMap(){
-    LSEventStringToEnumMap.set("Other",LSEventType.Other);
+    LSEventStringToEnumMap.set("Other",LSEventType.OTHER);
     LSEventStringToEnumMap.set("APA",LSEventType.APA);
     LSEventStringToEnumMap.set("MTH",LSEventType.MTH);
     LSEventStringToEnumMap.set("CSIS",LSEventType.CSIS);
@@ -81,6 +79,8 @@ export function InitializeTitleMap(){
         GlobalTitleMap.set(LSEventType.MTH,"MTH Workshops");
         GlobalTitleMap.set(LSEventType.STUDYJAMS,"Study Jams");
         GlobalTitleMap.set(LSEventType.WELCOMEWEEK,"Welcome Week Events");
+        GlobalTitleMap.set(LSEventType.OTHER,"General Events & Workshops");
+
     }
 
 }

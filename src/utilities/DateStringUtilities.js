@@ -47,7 +47,7 @@ export function GetOrdinalDate(date){
 //Returns date string in format of:
 //Monday, June 3rd (3-6 PM Chicago Time) 
 export function GetFullDateString(date,endDate){
-    if (typeof(date)=== 'string'){console.log("its a string");return date;}
+    if (typeof(date)=== 'string'){return date;}
     
     let tempDate;
     if (endDate){
@@ -182,13 +182,14 @@ export function GetMegaShortDateString(date){
 //Returns a date object corresponding to the Monday of whatever week we're on, + some offset.
 export function GetMondayOfWeek(startDate,weekOffset){
     let today= startDate;
-    console.log("Today: "+today);
+    //console.log("Today: "+today);
     //Reminder: Sunday has day index = 0
     let dayId = today.getDay();
     
     let mondayOfWeek = new Date(startDate);
     mondayOfWeek.setDate(today.getDate()-dayId+7*weekOffset+1);
-    console.log("Monday of this week: "+mondayOfWeek);
+    mondayOfWeek.setHours(0,0,0);
+    //console.log("Monday of this week: "+mondayOfWeek);
     return mondayOfWeek;
 }
 
@@ -201,7 +202,8 @@ export function GetFridayOfWeek(startDate,weekOffset){
 
     let fridayOfWeek = new Date(startDate);
     fridayOfWeek.setDate(today.getDate()-dayId+7*weekOffset+5);
-    console.log("Friday of this week: "+fridayOfWeek);
+    fridayOfWeek.setHours(22,59,59);
+    //console.log("Friday of this week: "+fridayOfWeek);
 
     return fridayOfWeek;
 
